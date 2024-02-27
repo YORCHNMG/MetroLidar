@@ -1,0 +1,29 @@
+detect_train:
+  ros__parameters:
+    x_min: 15 
+    x_max: 85  
+    y_min: 13
+    y_max: 93
+    h_min: 0
+    h_max: 25
+    s_min: 85
+    s_max: 255
+    v_min: 0
+    v_max: 255
+    sz_min: 0
+    sz_max: 100
+
+detect_train_3d:
+  ros__parameters:
+    h_fov: 0.05236
+    train_radius: 0.124
+    camera_frame: "camera_linko"
+
+follow_train:
+  ros__parameters:
+    rcv_timeout_secs: 1.0
+    angular_chase_multiplier: 0.7
+    forward_chase_speed: 17.0
+    search_angular_speed: 0.5
+    max_size_thresh: 0.023
+    filter_value: 0.8

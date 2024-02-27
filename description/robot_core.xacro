@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
+    <material name="red">
+      <color rgba="0 0 1 1"/>
+    </material>
+
     <link name="base_link">
     </link>
+    
 
     <joint name="Chassis_joint" type="fixed">
         <parent link="base_link"/>
@@ -149,323 +154,310 @@
      </collision>
     </link>
   
-  <link
-    name="Llanta1-3">
-    <inertial>
+    <joint name="Llanta1-3_joint" type="continuous">
       <origin
-        xyz="0 0 0"
+        xyz="4.8055 1.1399 0.30167"
         rpy="0 0 0" />
-      <mass
-        value="500" />
-      <inertia
-        ixx="30"
-        ixy="-0.0030034"
-        ixz="-0.0052717"
-        iyy="30"
-        iyz="0.0030911"
-        izz="9" />
-    </inertial>
-    <visual>
+      <parent
+        link="base_link" />
+      <child
+        link="Llanta1-3" />
+      <axis
+        xyz="0 1 0" />
+    </joint>
+    <link name="Llanta1-3">
+      <inertial>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <mass
+          value="500" />
+        <inertia
+          ixx="30"
+          ixy="-0.0030034"
+          ixz="-0.0052717"
+          iyy="30"
+          iyz="0.0030911"
+          izz="9" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find metrolidar)/description/meshes/Llanta1-3.dae" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find metrolidar)/description/meshes/Llanta1-3.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Llanta1-4">
+      <inertial>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <mass
+          value="500" />
+        <inertia
+          ixx="30"
+          ixy="0.0013621"
+          ixz="-0.0032069"
+          iyy="30"
+          iyz="-0.004089"
+          izz="9" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find metrolidar)/description/meshes/Llanta1-4.dae" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find metrolidar)/description/meshes/Llanta1-4.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="Llanta1-4_joint" type="continuous">
       <origin
-        xyz="0 0 0"
+        xyz="4.8055 -1.1101 0.30167"
         rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find metrolidar)/description/meshes/Llanta1-3.dae" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.29804 0.29804 0.29804 1" />
-      </material>
-    </visual>
-    <collision>
+      <parent
+        link="base_link" />
+      <child
+        link="Llanta1-4" />
+      <axis
+        xyz="0 1 0" />
+    </joint>
+
+    <link name="Llanta2-1">
+      <inertial>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <mass
+          value="500" />
+        <inertia
+          ixx="30"
+          ixy="-0.0030034"
+          ixz="-0.0052717"
+          iyy="30"
+          iyz="0.0030911"
+          izz="9" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find metrolidar)/description/meshes/Llanta2-1.dae" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find metrolidar)/description/meshes/Llanta2-1.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="Llanta2-1_joint" type="continuous">
       <origin
-        xyz="0 0 0"
+        xyz="-4.7145 1.1399 0.30167"
         rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find metrolidar)/description/meshes/Llanta1-3.dae" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="Llanta1-3_joint"
-    type="continuous">
-    <origin
-      xyz="4.8055 1.1399 0.30167"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Llanta1-3" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
-  <link
-    name="Llanta1-4">
-    <inertial>
+      <parent
+        link="base_link" />
+      <child
+        link="Llanta2-1" />
+      <axis
+        xyz="0 1 0" />
+    </joint>
+
+    <link name="Llanta2-2">
+      <inertial>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <mass
+          value="500" />
+        <inertia
+          ixx="30"
+          ixy="0.0013621"
+          ixz="-0.0032069"
+          iyy="30"
+          iyz="-0.004089"
+          izz="9" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find metrolidar)/description/meshes/Llanta2-2.dae" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find metrolidar)/description/meshes/Llanta2-2.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="Llanta2-2_joint" type="continuous">
       <origin
-        xyz="0 0 0"
+        xyz="-4.7145 -1.1101 0.30167"
         rpy="0 0 0" />
-      <mass
-        value="500" />
-      <inertia
-        ixx="30"
-        ixy="0.0013621"
-        ixz="-0.0032069"
-        iyy="30"
-        iyz="-0.004089"
-        izz="9" />
-    </inertial>
-    <visual>
+      <parent
+        link="base_link" />
+      <child
+        link="Llanta2-2" />
+      <axis
+        xyz="0 1 0" />
+    </joint>
+
+    <link name="Llanta2-3">
+      <inertial>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <mass
+          value="500" />
+        <inertia
+          ixx="30"
+          ixy="-0.0030034"
+          ixz="-0.0052717"
+          iyy="30"
+          iyz="0.0030911"
+          izz="9" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find metrolidar)/description/meshes/Llanta2-3.dae" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find metrolidar)/description/meshes/Llanta2-3.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="Llanta2-3_joint" type="continuous">
       <origin
-        xyz="0 0 0"
+        xyz="-6.1445 1.1399 0.30167"
         rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find metrolidar)/description/meshes/Llanta1-4.dae" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.29804 0.29804 0.29804 1" />
-      </material>
-    </visual>
-    <collision>
+      <parent
+        link="base_link" />
+      <child
+        link="Llanta2-3" />
+      <axis
+        xyz="0 1 0" />
+    </joint>
+
+    <link name="Llanta2-4">
+      <inertial>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <mass
+          value="500" />
+        <inertia
+          ixx="30"
+          ixy="0"
+          ixz="0"
+          iyy="30"
+          iyz="0"
+          izz="9" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find metrolidar)/description/meshes/Llanta2-4.dae" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.29804 0.29804 0.29804 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find metrolidar)/description/meshes/Llanta2-4.dae" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="Llanta2-4_joint" type="continuous">
       <origin
-        xyz="0 0 0"
+        xyz="-6.1445 -1.1101 0.30167"
         rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find metrolidar)/description/meshes/Llanta1-4.dae" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="Llanta1-4_joint"
-    type="continuous">
-    <origin
-      xyz="4.8055 -1.1101 0.30167"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Llanta1-4" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
-  <link
-    name="Llanta2-1">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="500" />
-      <inertia
-        ixx="30"
-        ixy="-0.0030034"
-        ixz="-0.0052717"
-        iyy="30"
-        iyz="0.0030911"
-        izz="9" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find metrolidar)/description/meshes/Llanta2-1.dae" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.29804 0.29804 0.29804 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find metrolidar)/description/meshes/Llanta2-1.dae" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="Llanta2-1_joint"
-    type="continuous">
-    <origin
-      xyz="-4.7145 1.1399 0.30167"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Llanta2-1" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
-  <link
-    name="Llanta2-2">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="500" />
-      <inertia
-        ixx="30"
-        ixy="0.0013621"
-        ixz="-0.0032069"
-        iyy="30"
-        iyz="-0.004089"
-        izz="9" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find metrolidar)/description/meshes/Llanta2-2.dae" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.29804 0.29804 0.29804 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find metrolidar)/description/meshes/Llanta2-2.dae" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="Llanta2-2_joint"
-    type="continuous">
-    <origin
-      xyz="-4.7145 -1.1101 0.30167"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Llanta2-2" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
-  <link
-    name="Llanta2-3">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="500" />
-      <inertia
-        ixx="30"
-        ixy="-0.0030034"
-        ixz="-0.0052717"
-        iyy="30"
-        iyz="0.0030911"
-        izz="9" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find metrolidar)/description/meshes/Llanta2-3.dae" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.29804 0.29804 0.29804 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find metrolidar)/description/meshes/Llanta2-3.dae" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="Llanta2-3_joint"
-    type="continuous">
-    <origin
-      xyz="-6.1445 1.1399 0.30167"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Llanta2-3" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
-  <link
-    name="Llanta2-4">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="500" />
-      <inertia
-        ixx="30"
-        ixy="0"
-        ixz="0"
-        iyy="30"
-        iyz="0"
-        izz="9" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find metrolidar)/description/meshes/Llanta2-4.dae" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.29804 0.29804 0.29804 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find metrolidar)/description/meshes/Llanta2-4.dae" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="Llanta2-4_joint"
-    type="continuous">
-    <origin
-      xyz="-6.1445 -1.1101 0.30167"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Llanta2-4" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
+      <parent
+        link="base_link" />
+      <child
+        link="Llanta2-4" />
+      <axis
+        xyz="0 1 0" />
+    </joint>
     
 </robot>
